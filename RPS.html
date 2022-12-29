@@ -7,58 +7,112 @@
     <title>Document</title>
 </head>
 <body>
+
+
+
 <script>
+//***Global Variables. these are global variables because I call them within functions and then 
+//   reference them within other variables
+
+var playerChoice;
+var computerChoiceInt;
+var playerScore = 0;
+var computerScore = 0;
 
 
 
-playerChoice = prompt("choose your weapon");
+//***Computer Choice Section. This section applies a string based on a random number.
+function getComputerChoice(computerChoice) {
+   computerChoice = Math.floor(Math.random() * 3) +1;
 
-
-console.log(playerChoice);
-
-
-function getComputerChoice(min, max) {
-   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-
-computerChoice = getComputerChoice(1,3);
-
-if (computerChoice == 1) {
+if (computerChoice === 1 ) {
     computerChoiceInt = "rock";}
 
-else if( computerChoice == 2) {
+else if( computerChoice === 2) {
     computerChoiceInt = "paper";
 }
-else if( computerChoice == 3) {
+else if( computerChoice === 3) {
     computerChoiceInt = "scissors";
 }
-console.log(computerChoiceInt)
-
-
-function playRound(playerChoice, computerChoiceInt) {
-        if (playerChoice === computerChoiceInt)
-        {
-        console.log("you tied");}
-        else if (playerChoice==="rock" && computerChoiceInt === "scissors")
-        {console.log("you win!");}
-        else if (playerChoice === "scissors" && computerChoiceInt === "rock") {
-            console.log("you lose!")
-        }
-        else if (playerChoice === "paper" && computerChoiceInt === "rock") {
-            console.log ("you win!");
-        }
-        else if (playerChoice === "rock" && computerChoiceInt === "scissors") {
-            console.log ("you win!");
-
-        }
-        else if (playerChoice === "scissors" && computerChoiceInt === "paper") {
-            console.log ("you win!");}
-         else if (playerChoice === "paper" && computerChoiceInt === "scissors") {
-            console.log ("you win!");
-    }
+console.log("computer chose",computerChoiceInt)
 }
-console.log(playRound(playerChoice, computerChoiceInt))
+//***Computer Choice Section
+
+//***Game Logic. This function applies the getComputerChoice function and uses the variables to 
+//   compare against player input similar to the following: rock > paper > scissors > rock.
+function playRound()  {
+
+getComputerChoice();
+    playerChoice = prompt("choose your weapon");
+    console.log(playerChoice);
+
+        if (playerChoice === computerChoiceInt) {
+            console.log("you tied");
+      
+}
+        else if (playerChoice === "rock" && computerChoiceInt === "scissors") { 
+            playerScore++;
+                console.log("you win!");
+}
+
+        else if (playerChoice === "scissors" && computerChoiceInt === "rock") {
+            computerScore++;
+                console.log("you lose!");
+            
+
+}
+        else if (playerChoice === "paper" && computerChoiceInt === "rock") {
+            playerScore++;
+                console.log ("you win!");
+            
+}
+        else if (playerChoice === "rock" && computerChoiceInt === "paper") {
+            computerScore++;
+                console.log ("you lose!");
+            
+
+}
+        else if (playerChoice === "scissors" && computerChoiceInt === "paper") {
+            playerScore++;
+                console.log ("you win!");
+           
+            
+}
+         else if (playerChoice === "paper" && computerChoiceInt === "scissors") {
+            computerScore++;
+                console.log ("you lose!");
+
+            
+}
+}
+//***Game Logic
+
+
+
+//***Score Logic. This runs a for loop to count the number of times the game runs.  Once the game
+//   runs 5 times, it counts the wins and losses and determines an overall winner.
+function game() {
+    for (let i =0; i<5; i++) { 
+        playRound()
+    
+}
+
+if (playerScore > computerScore) {
+        console.log("you are the winner")
+    }
+else if (playerScore < computerScore) {
+        console.log ("you lose today")
+    }
+else (console.log("all tied up"))
+
+}
+//***Score Logic
+
+
+//***Run the game automatically
+game();
+//***Run the game automatically
+
 
 </script>
 </body>
