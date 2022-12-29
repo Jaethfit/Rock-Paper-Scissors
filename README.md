@@ -1,1 +1,2 @@
 # Rock-Paper-Scissors
+Here is a demonstration of function calls within Javascript. This is a project through The Odin Project and shows integer to string conversion, if else calls, random math, and outcomes from gameplay.
