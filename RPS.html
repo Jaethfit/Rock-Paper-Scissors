@@ -15,26 +15,26 @@
 //   reference them within other variables
 
 var playerChoice;
-var computerChoiceInt;
+var computerChoice;
 var playerScore = 0;
 var computerScore = 0;
 
 
 
 //***Computer Choice Section. This section applies a string based on a random number.
-function getComputerChoice(computerChoice) {
-   computerChoice = Math.floor(Math.random() * 3) +1;
+function getComputerChoice(computerChoiceInt) {
+   computerChoiceInt = Math.floor(Math.random() * 3) +1;
 
-if (computerChoice === 1 ) {
-    computerChoiceInt = "rock";}
+if (computerChoiceInt === 1 ) {
+    computerChoice = "rock";}
 
-else if( computerChoice === 2) {
-    computerChoiceInt = "paper";
+else if( computerChoiceInt === 2) {
+    computerChoice = "paper";
 }
-else if( computerChoice === 3) {
-    computerChoiceInt = "scissors";
+else if( computerChoiceInt === 3) {
+    computerChoice = "scissors";
 }
-console.log("computer chose",computerChoiceInt)
+console.log("computer chose",computerChoice)
 }
 //***Computer Choice Section
 
@@ -46,45 +46,45 @@ getComputerChoice();
     playerChoice = prompt("choose your weapon");
     console.log(playerChoice);
 
-        if (playerChoice === computerChoiceInt) {
+        if (playerChoice === computerChoice) {
             console.log("you tied");
             console.log(playerScore, computerScore);
       
 }
-        else if (playerChoice === "rock" && computerChoiceInt === "scissors") { 
+        else if (playerChoice === "rock" && computerChoice === "scissors") { 
             playerScore++;
                 console.log("you win!");
                 console.log(playerScore, computerScore);
 }
 
-        else if (playerChoice === "scissors" && computerChoiceInt === "rock") {
+        else if (playerChoice === "scissors" && computerChoice === "rock") {
             computerScore++;
                 console.log("you lose!");
                 console.log(playerScore, computerScore);
             
 
 }
-        else if (playerChoice === "paper" && computerChoiceInt === "rock") {
+        else if (playerChoice === "paper" && computerChoice === "rock") {
             playerScore++;
                 console.log ("you win!");
                 console.log(playerScore, computerScore);
             
 }
-        else if (playerChoice === "rock" && computerChoiceInt === "paper") {
+        else if (playerChoice === "rock" && computerChoice === "paper") {
             computerScore++;
                 console.log ("you lose!");
                 console.log(playerScore, computerScore);
             
 
 }
-        else if (playerChoice === "scissors" && computerChoiceInt === "paper") {
+        else if (playerChoice === "scissors" && computerChoice === "paper") {
             playerScore++;
                 console.log ("you win!");
                 console.log(playerScore, computerScore);
            
             
 }
-         else if (playerChoice === "paper" && computerChoiceInt === "scissors") {
+         else if (playerChoice === "paper" && computerChoice === "scissors") {
             computerScore++;
                 console.log ("you lose!");
                 console.log(playerScore, computerScore);
