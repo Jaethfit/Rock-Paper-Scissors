@@ -48,39 +48,46 @@ getComputerChoice();
 
         if (playerChoice === computerChoiceInt) {
             console.log("you tied");
+            console.log(playerScore, computerScore);
       
 }
         else if (playerChoice === "rock" && computerChoiceInt === "scissors") { 
             playerScore++;
                 console.log("you win!");
+                console.log(playerScore, computerScore);
 }
 
         else if (playerChoice === "scissors" && computerChoiceInt === "rock") {
             computerScore++;
                 console.log("you lose!");
+                console.log(playerScore, computerScore);
             
 
 }
         else if (playerChoice === "paper" && computerChoiceInt === "rock") {
             playerScore++;
                 console.log ("you win!");
+                console.log(playerScore, computerScore);
             
 }
         else if (playerChoice === "rock" && computerChoiceInt === "paper") {
             computerScore++;
                 console.log ("you lose!");
+                console.log(playerScore, computerScore);
             
 
 }
         else if (playerChoice === "scissors" && computerChoiceInt === "paper") {
             playerScore++;
                 console.log ("you win!");
+                console.log(playerScore, computerScore);
            
             
 }
          else if (playerChoice === "paper" && computerChoiceInt === "scissors") {
             computerScore++;
                 console.log ("you lose!");
+                console.log(playerScore, computerScore);
 
             
 }
@@ -99,9 +106,11 @@ function game() {
 
 if (playerScore > computerScore) {
         console.log("you are the winner")
+        
     }
-else if (playerScore < computerScore) {
+else if (computerScore > playerScore) {
         console.log ("you lose today")
+        
     }
 else (console.log("all tied up"))
 
