@@ -1,0 +1,45 @@
+.header {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin-top: -50px;
+}
+.weapons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+
+}
+.weapon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scores{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.score{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.centerText {
+    font-size: 45px;
+    font-style: bold;
+    display: flex;
+    justify-content: center;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    100% { opacity: 0;}
+}
