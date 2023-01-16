@@ -1,111 +1,142 @@
-//***Global Variables. these are global variables because I call them within functions and then 
-//   reference them within other variables
 
-var playerChoice;
-var computerChoice;
-var playerScore = 0;
+
+var playerChoiceString;
 var computerScore = 0;
+var playerScore = 0;
+var computerChoiceInt;
+var cpuText;
+var winner;
 
 
 
-//***Computer Choice Section. This section applies a string based on a random number.
+
+
+
+//Made individual function blocks for each player choice for ease of readability
+
+function addRock(){
+    const rock = document.getElementById('rock');
+    playerChoiceString = "Rock";
+    console.log(`${playerChoiceString}`);
+    playGame();
+    document.getElementById("playerChoiceString").textContent = playerChoiceString;
+    return "rock";
+}
+function addPaper(){
+    const paper = document.getElementById('paper');
+    playerChoiceString = "Paper";
+    console.log(`${playerChoiceString}`);
+    playGame();
+    document.getElementById("playerChoiceString").textContent = playerChoiceString;
+    return "paper";
+
+}
+function addScissors(){
+    const scissors = document.getElementById('scissors');
+    playerChoiceString = "Scissors";
+    console.log(`${playerChoiceString}`);
+    playGame();
+    document.getElementById("playerChoiceString").textContent = playerChoiceString;
+    return "scissors";
+    
+
+}
+/***/
+
+//This function converts from a random int to a string instead of an array because of readability by others
 function getComputerChoice(computerChoiceInt) {
-   computerChoiceInt = Math.floor(Math.random() * 3) +1;
 
-if (computerChoiceInt === 1 ) {
-    computerChoice = "rock";}
+    computerChoiceInt = Math.floor(Math.random() * 3) +1;
+ 
+ if (computerChoiceInt === 1 ) {
+     cpuText = "Rock";
+    }
+ 
+ else if( computerChoiceInt === 2) {
+     cpuText = "Paper";
+ }
+ else if( computerChoiceInt === 3) {
+     cpuText = "Scissors";
+ }
+ console.log("computer chose",cpuText)
+ document.getElementById("cpuText").textContent = cpuText;
 
-else if( computerChoiceInt === 2) {
-    computerChoice = "paper";
-}
-else if( computerChoiceInt === 3) {
-    computerChoice = "scissors";
-}
-console.log("computer chose",computerChoice)
-}
-//***Computer Choice Section
 
-//***Game Logic. This function applies the getComputerChoice function and uses the variables to 
-//   compare against player input similar to the following: rock > paper > scissors > rock.
-function playRound()  {
+ }
 
-getComputerChoice();
-    playerChoice = prompt("choose your weapon");
-    console.log(playerChoice);
 
-        if (playerChoice === computerChoice) {
+// This function plays one round of the game by comparing the two strings and determining a winner. 
+function playRound() {
+
+    getComputerChoice();
+        if (playerChoiceString === cpuText) {
             console.log("you tied");
-            console.log(playerScore, computerScore);
       
 }
-        else if (playerChoice === "rock" && computerChoice === "scissors") { 
+        else if (playerChoiceString === "Rock" && cpuText === "Scissors") { 
             playerScore++;
-                console.log("you win!");
-                console.log(playerScore, computerScore);
-}
-
-        else if (playerChoice === "scissors" && computerChoice === "rock") {
-            computerScore++;
-                console.log("you lose!");
-                console.log(playerScore, computerScore);
+            console.log(playerScore,computerScore);
             
 
 }
-        else if (playerChoice === "paper" && computerChoice === "rock") {
+
+        else if (playerChoiceString === "Scissors" && cpuText === "Rock") {
+            computerScore++;
+            console.log(playerScore,computerScore);
+            
+
+}
+        else if (playerChoiceString === "Paper" && cpuText === "Rock") {
             playerScore++;
-                console.log ("you win!");
-                console.log(playerScore, computerScore);
+            console.log(playerScore,computerScore);
             
 }
-        else if (playerChoice === "rock" && computerChoice === "paper") {
+        else if (playerChoiceString === "Rock" && cpuText === "Paper") {
             computerScore++;
-                console.log ("you lose!");
-                console.log(playerScore, computerScore);
-            
+            console.log(playerScore,computerScore);
 
 }
-        else if (playerChoice === "scissors" && computerChoice === "paper") {
+        else if (playerChoiceString === "Scissors" && cpuText === "Paper") {
             playerScore++;
-                console.log ("you win!");
-                console.log(playerScore, computerScore);
-           
+            console.log(playerScore,computerScore);
             
 }
-         else if (playerChoice === "paper" && computerChoice === "scissors") {
+         else if (playerChoiceString === "Paper" && cpuText === "Scissors") {
             computerScore++;
-                console.log ("you lose!");
-                console.log(playerScore, computerScore);
-
-            
+            console.log(playerScore,computerScore);
 }
-}
-//***Game Logic
+document.getElementById("playerScore").textContent = playerScore;
+document.getElementById("computerScore").textContent = computerScore;
 
-
-
-//***Score Logic. This runs a for loop to count the number of times the game runs.  Once the game
-//   runs 5 times, it counts the wins and losses and determines an overall winner.
-function game() {
-    for (let i =0; i<5; i++) { 
-        playRound()
-    
 }
 
-if (playerScore > computerScore) {
-        console.log("you are the winner")
-        
-    }
-else if (computerScore > playerScore) {
-        console.log ("you lose today")
-        
-    }
-else (console.log("all tied up"))
+
+function playGame() {
+
+    playRound();
+if (playerScore == 5) {
+    console.log("you win");
+    let winner = "You win! Congratulations!";
+    reset();
+
+    console.log(winner);
+    document.getElementById("winner").textContent = winner;
+}
+else if (computerScore == 5) {
+    console.log("you lose");
+    let winner = "You lost! Maybe go touch grass?";
+    reset();
+    console.log(winner);
+    document.getElementById("winner").textContent = winner;
+}
+
+ 
+}
+function reset() {
+    playerScore = 0;
+    computerScore = 0;
+
 
 }
-//***Score Logic
 
-
-//***Run the game automatically
-game();
-//***Run the game automatically
 

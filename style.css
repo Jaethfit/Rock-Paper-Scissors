@@ -27,13 +27,62 @@
     align-items: center;
     justify-content: space-evenly;
 }
+.playerScore2 {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .cpuScore2 {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  .playerText {
+    position: absolute;
+    top: 48px;
+    left: 215px;
+    font-size: 85px;
+    color: white;
+    text-align: center;
+
+  }
+  .cpuText {
+    position: absolute;
+    top: 48px;
+    left: 215px;
+    font-size: 85px;
+    color: white;
+    text-align: center;
+
+  }
+.scoreBoth {
+    position: relative;
+    z-index: 2;
+
+}
+
+
 .centerText {
-    font-size: 45px;
+    font-size: 35px;
     font-style: bold;
     display: flex;
     justify-content: center;
+    font-family: sans-serif;
 }
-
+.win {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    font-style: bold;
+    font-family: sans-serif;
+}
+.button {
+    border: none;
+    color: blue;
+    font-size: 20px;
+    
+}
 
 @keyframes fadeIn {
     0% { opacity: 0;}

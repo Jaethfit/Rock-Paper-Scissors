@@ -14,33 +14,51 @@
     </div>
     <div class="weapons">
         <div class="weapon">
-            <img src="./images/rock.png";>
+            <img id="rock" src="./images/rock.png" onclick="addRock()">
         </div>
         <div class="weapon">
-            <img src="./images/paper.png";>
+            <img id="paper"; src="./images/paper.png" onclick="addPaper()">
         </div>
         <div class="weapon">
-            <img src="./images/scissors.png";>
+            <img id ="scissors"; src="./images/scissors.png" onclick="addScissors()">
         </div>
 
     </div>
-    <p class="centerText">
-        Rock...<br>Paper...<br>Scissors...
+    <span class = "centerText">You Chose :</span>
+    <span class = "centerText" id="playerChoiceString"></span>
+    <span class = "centerText">
+        Computer Chose :</span>
+<span class="centerText"; id="cpuText"></span>
         
+
             
-    </p>
+
+
     <div class="scores">
-        <div class="score">
+        <div class = "score">
+        <div class="playerScore2">
+            <span class="playerText" id="playerScore"></span>
             <img src="./images/player.png"; height="200px">
+            </div>
+                
+
         </div>
         <div class="score">
+            <div class = "cpuScore2">
+                <span class ="cpuText" id="computerScore"></span>
             <img src="./images/computer.png"; height="200px">
+                </div>
         </div>
 
     </div>
 
+    <div class="win" id="winner">
 
-<script src=""></script>
+
+    </div>
+    <button onclick="reset()"></button>
+
+<script src="script.js"></script>
 
 </body>
 </html>
