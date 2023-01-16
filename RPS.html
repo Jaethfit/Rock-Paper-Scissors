@@ -7,9 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body">
    <div class="header">
-        <img src="./images/choose.jpg"; height="175px"; width="auto">
+        <img src="./images/choose.png"; height="175px"; width="auto">
     
     </div>
     <div class="weapons">
@@ -24,12 +24,13 @@
         </div>
 
     </div>
+    <div class="centerFlex">
     <span class = "centerText">You Chose :</span>
     <span class = "centerText" id="playerChoiceString"></span>
     <span class = "centerText">
         Computer Chose :</span>
 <span class="centerText"; id="cpuText"></span>
-        
+        </div>
 
             
 
@@ -56,8 +57,9 @@
 
 
     </div>
-    <button onclick="reset()"></button>
-
+<div class="buttonAlign">
+    <button class = "button" onclick="reset()"><span>Play Again?</span></button>
+</div>
 <script src="script.js"></script>
 
 </body>

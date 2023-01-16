@@ -135,8 +135,14 @@ else if (computerScore == 5) {
 function reset() {
     playerScore = 0;
     computerScore = 0;
-
-
+    winner == null;
+    cpuText == null;
+    playerChoiceString == null;
+    document.getElementById("winner").textContent = winner;
+    document.getElementById("playerScore").textContent = playerScore;
+    document.getElementById("computerScore").textContent = computerScore;
+    document.getElementById("cpuText").textContent = cpuText;
+    document.getElementById("playerChoiceString").textContent = playerChoiceString;
 }
 
 
